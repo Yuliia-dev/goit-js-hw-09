@@ -47,6 +47,9 @@ function startTimer() {
     secondsEl.innerText = result.seconds;
 
     if (distance < 1) {
+      Notiflix.Notify.info(
+        'The time before the sale is over. We are waiting for you in our store "GOIT" 🎉',
+      );
       clearInterval(timerId);
       inputEl.disabled = false;
       startElBtn.disabled = false;
