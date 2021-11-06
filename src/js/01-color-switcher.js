@@ -4,13 +4,10 @@ const stopEl = document.querySelector('button[data-stop]');
 startEl.addEventListener('click', startGenerisColor);
 stopEl.addEventListener('click', stopGenerisColor);
 let timerId = null;
-let isActive = false;
 
 function startGenerisColor() {
-  if (isActive) {
-    return;
-  }
-  isActive = true;
+  startEl.disabled = true;
+  stopEl.disabled = false;
   const bodyEl = document.querySelector('body');
   bodyEl.classList.add('color');
   const colorBody = document.querySelector('.color');
@@ -21,7 +18,8 @@ function startGenerisColor() {
 }
 
 function stopGenerisColor() {
-  isActive = false;
+  stopEl.disabled = true;
+  startEl.disabled = false;
   clearInterval(timerId);
 }
 
