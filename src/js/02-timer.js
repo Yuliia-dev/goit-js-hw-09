@@ -46,17 +46,17 @@ function startTimer() {
     minutesEl.innerText = result.minutes;
     secondsEl.innerText = result.seconds;
 
-    if (distance < 1) {
+    if (distance < 1000) {
       Notiflix.Notify.info(
         'The time before the sale is over. We are waiting for you in our store "GOIT" 🎉',
       );
       clearInterval(timerId);
       inputEl.disabled = false;
       startElBtn.disabled = false;
-      (daysEl.innerText = '00'),
-        (hoursEl.innerText = '00'),
-        (minutesEl.innerText = '00'),
-        (secondsEl.innerText = '00');
+      // (daysEl.innerText = '00'),
+      //   (hoursEl.innerText = '00'),
+      //   (minutesEl.innerText = '00'),
+      //   (secondsEl.innerText = '00');
     }
   }, 1000);
 }
